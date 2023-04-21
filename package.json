@@ -1,58 +1,71 @@
 {
-  "name": "starter-react-graphql-apollo-prisma",
-  "private": true,
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "compile": "tsc",
-    "compile:watch": "tsc --watch",
-    "postinstall": "npm run compile",
-    "dev": "npm run compile && concurrently  --names \"TS,Nodemon\" -c \"blueBright,green\" \"tsc -w \" \"nodemon ./dist/index.js \"",
-    "start": "npm run compile && node ./dist/index.js",
-    "lint": "eslint . --fix --max-warnings=0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jeyofdev/starter-react-graphql-apollo-prisma.git"
-  },
-  "keywords": [
-    "javascript",
-    "js",
-    "vitejs",
-    "react",
-    "eslint",
-    "prettier",
-    "vitest",
-    "typescript",
-    "husky",
-    "nodejs",
-    "graphql",
-    "apollo-server",
-    "apollo-client"
-  ],
-  "author": "jeyofdev <jgregoire.pro@gmail.com>",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/jeyofdev/starter-react-graphql-apollo-prisma/issues"
-  },
-  "devDependencies": {
-    "@types/node": "^18.15.13",
-    "@typescript-eslint/eslint-plugin": "^5.59.0",
-    "@typescript-eslint/parser": "^5.59.0",
-    "concurrently": "^8.0.1",
-    "eslint": "^8.38.0",
-    "eslint-config-airbnb": "^19.0.4",
-    "eslint-config-airbnb-typescript": "^17.0.0",
-    "eslint-config-prettier": "^8.8.0",
-    "eslint-plugin-import": "^2.27.5",
-    "eslint-plugin-jsx-a11y": "^6.7.1",
-    "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-react": "^7.32.2",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "nodemon": "^2.0.22",
-    "prettier": "^2.8.7",
-    "ts-node": "^10.9.1",
-    "typescript": "^5.0.4"
-  }
+	"name": "starter-react-graphql-apollo-prisma",
+	"private": true,
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"compile": "tsc",
+		"compile:watch": "tsc --watch",
+		"postinstall": "npm run compile",
+		"dev": "npm run compile && concurrently  --names \"TS,Nodemon\" -c \"blueBright,green\" \"tsc -w \" \"nodemon ./dist/index.js \"",
+		"start": "npm run compile && node ./dist/index.js",
+		"lint": "eslint . --fix --max-warnings=0",
+		"prepare": "husky install"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/jeyofdev/starter-react-graphql-apollo-prisma.git"
+	},
+	"keywords": [
+		"javascript",
+		"js",
+		"vitejs",
+		"react",
+		"eslint",
+		"prettier",
+		"vitest",
+		"typescript",
+		"husky",
+		"nodejs",
+		"graphql",
+		"apollo-server",
+		"apollo-client"
+	],
+	"author": "jeyofdev <jgregoire.pro@gmail.com>",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/jeyofdev/starter-react-graphql-apollo-prisma/issues"
+	},
+	"devDependencies": {
+		"@types/node": "^18.15.13",
+		"@typescript-eslint/eslint-plugin": "^5.59.0",
+		"@typescript-eslint/parser": "^5.59.0",
+		"concurrently": "^8.0.1",
+		"eslint": "^8.38.0",
+		"eslint-config-airbnb": "^19.0.4",
+		"eslint-config-airbnb-typescript": "^17.0.0",
+		"eslint-config-prettier": "^8.8.0",
+		"eslint-plugin-import": "^2.27.5",
+		"eslint-plugin-jsx-a11y": "^6.7.1",
+		"eslint-plugin-prettier": "^4.2.1",
+		"eslint-plugin-react": "^7.32.2",
+		"eslint-plugin-react-hooks": "^4.6.0",
+		"husky": "^8.0.3",
+		"lint-staged": "^13.2.1",
+		"nodemon": "^2.0.22",
+		"prettier": "^2.8.7",
+		"ts-node": "^10.9.1",
+		"typescript": "^5.0.4"
+	},
+	"hooks": {
+		"pre-commit": "npm run lint"
+	},
+	"lint-staged": {
+		"*.{js,ts,tsx,jsx}": [
+			"prettier --write",
+			"eslint --max-warnings=0"
+		],
+		"*.{js,css,md,html,json}": "prettier --cache --write"
+	}
 }

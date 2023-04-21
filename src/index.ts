@@ -1,3 +1,4 @@
 const count = (a: number, b: number): number => a + b;
 
-console.log(count(3, 6));
+// eslint-disable-next-line no-console
+console.log(count(5, 6));
