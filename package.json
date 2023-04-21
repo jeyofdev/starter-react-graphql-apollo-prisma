@@ -5,12 +5,8 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"compile": "tsc",
-		"compile:watch": "tsc --watch",
-		"postinstall": "npm run compile",
-		"dev": "npm run compile && concurrently  --names \"TS,Nodemon\" -c \"blueBright,green\" \"tsc -w \" \"nodemon ./dist/index.js \"",
-		"start": "npm run compile && node ./dist/index.js",
-		"lint": "eslint . --fix --max-warnings=0",
+		"dev:client": "cd client && npm run dev",
+		"lint:client": "cd client && npm run lint",
 		"prepare": "husky install"
 	},
 	"repository": {
@@ -46,6 +42,7 @@
 		"eslint-config-airbnb": "^19.0.4",
 		"eslint-config-airbnb-typescript": "^17.0.0",
 		"eslint-config-prettier": "^8.8.0",
+		"eslint-import-resolver-typescript": "^3.5.5",
 		"eslint-plugin-import": "^2.27.5",
 		"eslint-plugin-jsx-a11y": "^6.7.1",
 		"eslint-plugin-prettier": "^4.2.1",
@@ -67,5 +64,9 @@
 			"eslint --max-warnings=0"
 		],
 		"*.{js,css,md,html,json}": "prettier --cache --write"
+	},
+	"dependencies": {
+		"eslint-import-resolver-alias": "^1.1.2",
+		"eslint-plugin-react-refresh": "^0.3.4"
 	}
 }
