@@ -6,7 +6,7 @@ module.exports = {
 	},
 	extends: [
 		'airbnb-base',
-		'airbnb-typescript/base',
+		'airbnb-typescript',
 		'airbnb/hooks',
 		'plugin:react/recommended',
 		'plugin:@typescript-eslint/recommended',
@@ -24,19 +24,14 @@ module.exports = {
 			'./tsconfig.json',
 			'./client/tsconfig.json',
 			'./client/tsconfig.node.json',
+			'./api/tsconfig.json',
 		],
 		tsconfigRootDir: __dirname,
 	},
-	plugins: ['react', '@typescript-eslint', 'react-refresh'],
+	plugins: ['react', '@typescript-eslint'],
 	settings: {
 		react: { version: 'detect' },
 		'import/resolver': {
-			typescript: {
-				alwaysTryTypes: true,
-			},
-			node: {
-				extensions: ['.js', '.ts'],
-			},
 			alias: {
 				map: [
 					['@components', './src/components'],
@@ -47,15 +42,8 @@ module.exports = {
 				],
 				extensions: ['.js', '.ts', '.jsx', '.tsx'],
 			},
-			'import/ignore': ['node_modules'],
 		},
 	},
-	ignorePatterns: ['.eslintrc.cjs'],
-
-	rules: {
-		'react/react-in-jsx-scope': 0,
-		'react-refresh/only-export-components': 'warn',
-		'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
-		'import/no-cycle': [2, { maxDepth: 1 }],
-	},
+	ignorePatterns: ['.eslintrc.cjs', 'codegen.ts', 'src/__generated__'],
+	rules: { 'react/react-in-jsx-scope': 0 },
 };

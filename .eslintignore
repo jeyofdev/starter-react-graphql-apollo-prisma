@@ -1,1 +1,2 @@
 /dist/**/*.js
+/api/src/__generated__/resolvers-types.ts

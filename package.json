@@ -8,6 +8,7 @@
 		"dev:client": "cd client && npm run dev",
 		"dev:api": "cd api && npm run dev",
 		"lint:client": "cd client && npm run lint",
+		"lint:api": "cd api && npm run lint",
 		"prepare": "husky install"
 	},
 	"repository": {
@@ -62,7 +63,7 @@
 	"lint-staged": {
 		"*.{js,ts,tsx,jsx}": [
 			"prettier --write",
-			"eslint --max-warnings=0"
+			"eslint --no-ignore --max-warnings=0"
 		],
 		"*.{js,css,md,html,json}": "prettier --cache --write"
 	},
