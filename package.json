@@ -1,34 +1,45 @@
 {
-	"name": "starter-react-graphql-apollo-prisma",
-	"private": true,
-	"version": "1.0.0",
-	"description": "",
-	"main": "index.js",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/jeyofdev/starter-react-graphql-apollo-prisma.git"
-	},
-	"keywords": [
-		"javascript",
-		"js",
-		"vitejs",
-		"react",
-		"eslint",
-		"prettier",
-		"vitest",
-		"typescript",
-		"husky",
-		"nodejs",
-		"graphql",
-		"apollo-server",
-		"apollo-client"
-	],
-	"author": "jeyofdev <jgregoire.pro@gmail.com>",
-	"license": "ISC",
-	"bugs": {
-		"url": "https://github.com/jeyofdev/starter-react-graphql-apollo-prisma/issues"
-	}
+  "name": "starter-react-graphql-apollo-prisma",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compile": "tsc",
+    "compile:watch": "tsc --watch",
+    "postinstall": "npm run compile",
+    "dev": "npm run compile && concurrently  --names \"TS,Nodemon\" -c \"blueBright,green\" \"tsc -w \" \"nodemon ./dist/index.js \"",
+    "start": "npm run compile && node ./dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeyofdev/starter-react-graphql-apollo-prisma.git"
+  },
+  "keywords": [
+    "javascript",
+    "js",
+    "vitejs",
+    "react",
+    "eslint",
+    "prettier",
+    "vitest",
+    "typescript",
+    "husky",
+    "nodejs",
+    "graphql",
+    "apollo-server",
+    "apollo-client"
+  ],
+  "author": "jeyofdev <jgregoire.pro@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jeyofdev/starter-react-graphql-apollo-prisma/issues"
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.13",
+    "concurrently": "^8.0.1",
+    "nodemon": "^2.0.22",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
+  }
 }
