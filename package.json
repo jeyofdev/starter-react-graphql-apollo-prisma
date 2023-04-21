@@ -1,0 +1,34 @@
+{
+	"name": "starter-react-graphql-apollo-prisma",
+	"private": true,
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/jeyofdev/starter-react-graphql-apollo-prisma.git"
+	},
+	"keywords": [
+		"javascript",
+		"js",
+		"vitejs",
+		"react",
+		"eslint",
+		"prettier",
+		"vitest",
+		"typescript",
+		"husky",
+		"nodejs",
+		"graphql",
+		"apollo-server",
+		"apollo-client"
+	],
+	"author": "jeyofdev <jgregoire.pro@gmail.com>",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/jeyofdev/starter-react-graphql-apollo-prisma/issues"
+	}
+}
