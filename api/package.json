@@ -1,0 +1,20 @@
+{
+	"name": "api",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"compile": "tsc",
+		"postinstall": "npm run compile",
+		"build": "npm run compile && node ./dist/index.js",
+		"dev": "npm run compile && concurrently  --names \"TS,Nodemon\" -c \"blueBright,green\" \"tsc -w \" \"nodemon ./dist/index.js \"",
+		"generate": "graphql-codegen --config codegen.ts"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"@apollo/server": "^4.7.0",
+		"graphql": "^16.6.0"
+	}
+}

@@ -31,6 +31,12 @@ module.exports = {
 	settings: {
 		react: { version: 'detect' },
 		'import/resolver': {
+			typescript: {
+				alwaysTryTypes: true,
+			},
+			node: {
+				extensions: ['.js', '.ts'],
+			},
 			alias: {
 				map: [
 					['@components', './src/components'],
@@ -41,6 +47,7 @@ module.exports = {
 				],
 				extensions: ['.js', '.ts', '.jsx', '.tsx'],
 			},
+			'import/ignore': ['node_modules'],
 		},
 	},
 	ignorePatterns: ['.eslintrc.cjs'],
