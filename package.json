@@ -9,6 +9,8 @@
 		"dev:api": "cd api && npm run dev",
 		"lint:client": "cd client && npm run lint",
 		"lint:api": "cd api && npm run lint",
+		"dev": "concurrently --names \"api,client\" -c \"blueBright,green\" \"npm run dev:client \" \"npm run dev:api \"",
+		"lint": "concurrently --names \"api,client\" -c \"blueBright,green\" \"npm run lint:client \" \"npm run lint:api \"",
 		"prepare": "husky install"
 	},
 	"repository": {
