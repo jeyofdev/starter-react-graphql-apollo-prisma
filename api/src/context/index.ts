@@ -1,13 +1,9 @@
-import MoviesService from '../services/movies.service';
+import { PrismaClient } from '@prisma/client';
 
 export interface IContext {
-	dataSource: {
-		movie: MoviesService;
-	};
+	prisma: PrismaClient;
 }
 
 export const context: IContext = {
-	dataSource: {
-		movie: new MoviesService(),
-	},
+	prisma: new PrismaClient(),
 };

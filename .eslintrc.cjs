@@ -44,6 +44,6 @@ module.exports = {
 			},
 		},
 	},
-	ignorePatterns: ['.eslintrc.cjs', 'codegen.ts', 'src/__generated__'],
+	ignorePatterns: ['.eslintrc.cjs'],
 	rules: { 'react/react-in-jsx-scope': 0 },
 };

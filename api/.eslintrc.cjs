@@ -29,5 +29,5 @@ module.exports = {
 		'import/no-cycle': [2, { maxDepth: 1 }],
 	},
 
-	ignorePatterns: ['.eslintrc.cjs', 'codegen.ts', 'src/__generated__'],
+	ignorePatterns: ['.eslintrc.cjs', 'codegen.ts', 'src/__generated__', 'dist'],
 };
