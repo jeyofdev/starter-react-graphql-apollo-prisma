@@ -1,13 +1,13 @@
-import BooksService from '../services/books.service';
+import MoviesService from '../services/movies.service';
 
 export interface IContext {
 	dataSource: {
-		books: BooksService;
+		movie: MoviesService;
 	};
 }
 
 export const context: IContext = {
 	dataSource: {
-		books: new BooksService(),
+		movie: new MoviesService(),
 	},
 };

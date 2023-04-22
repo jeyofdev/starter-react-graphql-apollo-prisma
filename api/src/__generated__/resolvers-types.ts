@@ -20,36 +20,34 @@ export type Scalars = {
 	Float: number;
 };
 
-export type AddBookMutationResponse = {
-	__typename?: 'AddBookMutationResponse';
-	book?: Maybe<Book>;
+export type AddMovieMutationResponse = {
+	__typename?: 'AddMovieMutationResponse';
 	code: Scalars['String'];
 	message: Scalars['String'];
+	movie?: Maybe<Movie>;
 	success: Scalars['Boolean'];
 };
 
-export type Book = {
-	__typename?: 'Book';
-	author?: Maybe<Scalars['String']>;
-	id?: Maybe<Scalars['ID']>;
-	title?: Maybe<Scalars['String']>;
-	year?: Maybe<Scalars['Int']>;
+export type Movie = {
+	__typename?: 'Movie';
+	duration: Scalars['Int'];
+	id?: Maybe<Scalars['String']>;
+	title: Scalars['String'];
 };
 
 export type Mutation = {
 	__typename?: 'Mutation';
-	addBook?: Maybe<AddBookMutationResponse>;
+	addMovie?: Maybe<AddMovieMutationResponse>;
 };
 
-export type MutationAddBookArgs = {
-	author?: InputMaybe<Scalars['String']>;
+export type MutationAddMovieArgs = {
+	duration?: InputMaybe<Scalars['Int']>;
 	title?: InputMaybe<Scalars['String']>;
-	year?: InputMaybe<Scalars['Int']>;
 };
 
 export type Query = {
 	__typename?: 'Query';
-	books?: Maybe<Array<Maybe<Book>>>;
+	movies?: Maybe<Array<Maybe<Movie>>>;
 };
 
 export type WithIndex<TObject> = TObject & Record<string, any>;
@@ -162,11 +160,10 @@ export type DirectiveResolverFn<
 
 /** Mapping between all available schema types and the resolvers types */
 export type ResolversTypes = ResolversObject<{
-	AddBookMutationResponse: ResolverTypeWrapper<AddBookMutationResponse>;
-	Book: ResolverTypeWrapper<Book>;
+	AddMovieMutationResponse: ResolverTypeWrapper<AddMovieMutationResponse>;
 	Boolean: ResolverTypeWrapper<Scalars['Boolean']>;
-	ID: ResolverTypeWrapper<Scalars['ID']>;
 	Int: ResolverTypeWrapper<Scalars['Int']>;
+	Movie: ResolverTypeWrapper<Movie>;
 	Mutation: ResolverTypeWrapper<{}>;
 	Query: ResolverTypeWrapper<{}>;
 	String: ResolverTypeWrapper<Scalars['String']>;
@@ -174,35 +171,33 @@ export type ResolversTypes = ResolversObject<{
 
 /** Mapping between all available schema types and the resolvers parents */
 export type ResolversParentTypes = ResolversObject<{
-	AddBookMutationResponse: AddBookMutationResponse;
-	Book: Book;
+	AddMovieMutationResponse: AddMovieMutationResponse;
 	Boolean: Scalars['Boolean'];
-	ID: Scalars['ID'];
 	Int: Scalars['Int'];
+	Movie: Movie;
 	Mutation: {};
 	Query: {};
 	String: Scalars['String'];
 }>;
 
-export type AddBookMutationResponseResolvers<
+export type AddMovieMutationResponseResolvers<
 	ContextType = any,
-	ParentType extends ResolversParentTypes['AddBookMutationResponse'] = ResolversParentTypes['AddBookMutationResponse'],
+	ParentType extends ResolversParentTypes['AddMovieMutationResponse'] = ResolversParentTypes['AddMovieMutationResponse'],
 > = ResolversObject<{
-	book?: Resolver<Maybe<ResolversTypes['Book']>, ParentType, ContextType>;
 	code?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
 	message?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+	movie?: Resolver<Maybe<ResolversTypes['Movie']>, ParentType, ContextType>;
 	success?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType>;
 	__isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 }>;
 
-export type BookResolvers<
+export type MovieResolvers<
 	ContextType = any,
-	ParentType extends ResolversParentTypes['Book'] = ResolversParentTypes['Book'],
+	ParentType extends ResolversParentTypes['Movie'] = ResolversParentTypes['Movie'],
 > = ResolversObject<{
-	author?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
-	id?: Resolver<Maybe<ResolversTypes['ID']>, ParentType, ContextType>;
-	title?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
-	year?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
+	duration?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+	id?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+	title?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
 	__isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 }>;
 
@@ -210,11 +205,11 @@ export type MutationResolvers<
 	ContextType = any,
 	ParentType extends ResolversParentTypes['Mutation'] = ResolversParentTypes['Mutation'],
 > = ResolversObject<{
-	addBook?: Resolver<
-		Maybe<ResolversTypes['AddBookMutationResponse']>,
+	addMovie?: Resolver<
+		Maybe<ResolversTypes['AddMovieMutationResponse']>,
 		ParentType,
 		ContextType,
-		Partial<MutationAddBookArgs>
+		Partial<MutationAddMovieArgs>
 	>;
 }>;
 
@@ -222,16 +217,16 @@ export type QueryResolvers<
 	ContextType = any,
 	ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query'],
 > = ResolversObject<{
-	books?: Resolver<
-		Maybe<Array<Maybe<ResolversTypes['Book']>>>,
+	movies?: Resolver<
+		Maybe<Array<Maybe<ResolversTypes['Movie']>>>,
 		ParentType,
 		ContextType
 	>;
 }>;
 
 export type Resolvers<ContextType = any> = ResolversObject<{
-	AddBookMutationResponse?: AddBookMutationResponseResolvers<ContextType>;
-	Book?: BookResolvers<ContextType>;
+	AddMovieMutationResponse?: AddMovieMutationResponseResolvers<ContextType>;
+	Movie?: MovieResolvers<ContextType>;
 	Mutation?: MutationResolvers<ContextType>;
 	Query?: QueryResolvers<ContextType>;
 }>;
