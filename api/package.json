@@ -9,19 +9,21 @@
 		"build": "npm run compile && node ./dist/index.js",
 		"dev": "npm run compile && concurrently --names \"CodeGen,TS,Nodemon\" -c \"yellow,blueBright,green\" \"graphql-codegen --watch 'src/**/*.ts'\"  \"tsc -w \" \"nodemon ./dist/index.js \"",
 		"generate": "graphql-codegen --config codegen.ts",
-		"lint": "eslint src --fix --no-ignore --max-warnings=0"
+		"lint": "eslint . --fix --no-ignore --max-warnings=0"
 	},
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
 		"@apollo/server": "^4.7.0",
+		"@prisma/client": "^4.13.0",
 		"graphql": "^16.6.0"
 	},
 	"devDependencies": {
 		"@graphql-codegen/cli": "^3.3.0",
 		"@graphql-codegen/introspection": "^3.0.1",
 		"@graphql-codegen/typescript": "^3.0.3",
-		"@graphql-codegen/typescript-resolvers": "^3.2.0"
+		"@graphql-codegen/typescript-resolvers": "^3.2.0",
+		"prisma": "^4.13.0"
 	}
 }
