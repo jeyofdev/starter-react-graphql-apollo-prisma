@@ -25,7 +25,8 @@
 			"@hooks/*": ["./src/hooks/*"],
 			"@images/*": ["./src/assets/images/*"],
 			"@utils/*": ["./src/utils/*"],
-			"@context/*": ["./src/context/*"]
+			"@context/*": ["./src/context/*"],
+			"@graphql/*": ["./src/graphql/*"]
 		}
 	},
 	"include": ["src", "../tsconfig.json"],
