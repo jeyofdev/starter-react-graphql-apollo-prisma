@@ -11,6 +11,16 @@ const Home = () => {
 		refetchQueries: [queries.movies],
 	});
 
+	if (loading) {
+		return <p>...Loading</p>;
+	}
+
+	if (error) {
+		// eslint-disable-next-line no-console
+		console.log(error, error.message);
+		return <p>Oooops</p>;
+	}
+
 	// eslint-disable-next-line no-console
 	console.log(data, loading, error);
 

@@ -9,8 +9,8 @@
 		"dev:api": "cd api && npm run dev",
 		"lint:client": "cd client && npm run lint",
 		"lint:api": "cd api && npm run lint",
-		"dev": "concurrently --names \"api,client\" -c \"blueBright,green\" \"npm run dev:client \" \"npm run dev:api \"",
-		"lint": "concurrently --names \"api,client\" -c \"blueBright,green\" \"npm run lint:client \" \"npm run lint:api \"",
+		"dev": "concurrently --names \"api,client\" -c \"blueBright,green\" \"npm run dev:api \" \"delay 5 && npm run dev:client \"",
+		"lint": "concurrently --names \"api,client\" -c \"blueBright,green\" \"npm run lint:api \" \"npm run lint:client \"",
 		"prepare": "husky install"
 	},
 	"repository": {
@@ -42,6 +42,7 @@
 		"@typescript-eslint/eslint-plugin": "^5.59.0",
 		"@typescript-eslint/parser": "^5.59.0",
 		"concurrently": "^8.0.1",
+		"delay-cli": "^2.0.0",
 		"eslint": "^8.38.0",
 		"eslint-config-airbnb": "^19.0.4",
 		"eslint-config-airbnb-typescript": "^17.0.0",
