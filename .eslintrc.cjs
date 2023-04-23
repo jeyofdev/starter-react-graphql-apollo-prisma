@@ -45,5 +45,8 @@ module.exports = {
 		},
 	},
 	ignorePatterns: ['.eslintrc.cjs'],
-	rules: { 'react/react-in-jsx-scope': 0 },
+	rules: {
+		'react/react-in-jsx-scope': 0,
+		'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+	},
 };
