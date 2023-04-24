@@ -5,13 +5,16 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
+		"preinstall": "cd api && npm install && ../client && npm install",
 		"dev:client": "cd client && npm run dev",
 		"dev:api": "cd api && npm run dev",
 		"lint:client": "cd client && npm run lint",
 		"lint:api": "cd api && npm run lint",
 		"dev": "concurrently --names \"api,client\" -c \"blueBright,green\" \"npm run dev:api \" \"delay 5 && npm run dev:client \"",
 		"lint": "concurrently --names \"api,client\" -c \"blueBright,green\" \"npm run lint:api \" \"npm run lint:client \"",
-		"prepare": "husky install"
+		"prepare": "husky install",
+		"db:migrate": "cd api && npm run db:migrate",
+		"db:seed": "cd api && npm run db:seed"
 	},
 	"repository": {
 		"type": "git",
@@ -73,8 +76,5 @@
 	"dependencies": {
 		"eslint-import-resolver-alias": "^1.1.2",
 		"eslint-plugin-react-refresh": "^0.3.4"
-	},
-	"prisma": {
-		"seed": "ts-node api/prisma/seed.ts"
 	}
 }
