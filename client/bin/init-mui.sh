@@ -51,16 +51,16 @@ const globalTheme = createTheme({
 		h1: {
 			fontSize: '1rem',
 			[theme.breakpoints.up('sm')]: {
-				fontSize: '1.5rem',
+				fontSize: '1.15rem',
 			},
 			[theme.breakpoints.up('md')]: {
-				fontSize: '2rem',
+				fontSize: '1.25rem',
 			},
 			[theme.breakpoints.up('lg')]: {
-				fontSize: '2.5rem',
+				fontSize: '2.35rem',
 			},
 			[theme.breakpoints.up('xl')]: {
-				fontSize: '3rem',
+				fontSize: '1.5rem',
 			},
 		},
 	},

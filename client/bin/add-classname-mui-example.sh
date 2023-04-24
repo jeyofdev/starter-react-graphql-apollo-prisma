@@ -1,10 +1,8 @@
 cd client
 
 cat <<EOT > src/components/Home.tsx
-import { useMutation, useQuery } from '@apollo/client';
-import mutations from '@graphql/mutations';
-import queries from '@graphql/queries';
-import { Box, Button } from '@mui/material';
+import { MoviesDocument, useAddMovieMutation, useMoviesQuery } from '@graphql/__generated__/graphql-type';
+import { Box, Button, Typography } from '@mui/material';
 import sayHello from '@utils/index';
 
 const styles = {
@@ -24,11 +22,11 @@ const styles = {
 };
 
 const Home = () => {
-	const { data, loading, error } = useQuery(queries.movies);
-	const [addProject] = useMutation(mutations.addMovie, {
+	const { data, loading, error } = useMoviesQuery()
+	const [addProject] = useAddMovieMutation({
 		onCompleted: () => {},
 		onError: () => {},
-		refetchQueries: [queries.movies],
+		refetchQueries: [MoviesDocument],
 	});
 
   if (loading) {
@@ -46,7 +44,7 @@ const Home = () => {
 
 	return (
 		<Box sx={styles.root}>
-			<h1>{sayHello('Hello world')} !!!</h1>
+			<Typography variant="h1">{sayHello('Hello world')} !!!</Typography>
 			<Button
 				variant='text'
 				onClick={() =>

@@ -1,17 +1,15 @@
 cd client
 
 cat <<EOT > src/components/Home.tsx
-import { useMutation, useQuery } from '@apollo/client';
-import mutations from '@graphql/mutations';
-import queries from '@graphql/queries';
+import { MoviesDocument, useAddMovieMutation, useMoviesQuery } from '@graphql/__generated__/graphql-type';
 import sayHello from '@utils/index';
 
 const Home = () => {
-	const { data, loading, error } = useQuery(queries.movies);
-	const [addProject] = useMutation(mutations.addMovie, {
+	const { data, loading, error } = useMoviesQuery()
+	const [addProject] = useAddMovieMutation({
 		onCompleted: () => {},
 		onError: () => {},
-		refetchQueries: [queries.movies],
+		refetchQueries: [MoviesDocument],
 	});
 
   if (loading) {
