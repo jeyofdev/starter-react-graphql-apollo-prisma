@@ -1,17 +1,20 @@
 import Home from '@components/Home';
+import { Box } from '@mui/material';
+
+const styles = {
+	root: {
+		display: 'flex',
+		justifyContent: 'center',
+		alignItems: 'center',
+		minHeight: '100vh',
+		width: '100%',
+	},
+};
 
 const App = () => (
-	<div
-		style={{
-			display: 'flex',
-			justifyContent: 'center',
-			alignItems: 'center',
-			minHeight: '100vh',
-			width: '100%',
-		}}
-	>
+	<Box sx={styles.root}>
 		<Home />
-	</div>
+	</Box>
 );
 
 export default App;

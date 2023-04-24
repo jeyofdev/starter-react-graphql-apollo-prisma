@@ -3,7 +3,24 @@ import {
 	useAddMovieMutation,
 	useMoviesQuery,
 } from '@graphql/__generated__/graphql-type';
+import { Box, Button, Typography } from '@mui/material';
 import sayHello from '@utils/index';
+
+const styles = {
+	root: {
+		display: 'flex',
+		flexDirection: 'column',
+		alignItems: 'center',
+	},
+	btn: {
+		padding: '0.5rem 1rem',
+		borderRadius: '0.625rem',
+		border: 'none',
+		backgroundColor: 'rgb(221, 239, 255)',
+		cursor: 'pointer',
+		color: 'black',
+	},
+};
 
 const Home = () => {
 	const { data, loading, error } = useMoviesQuery();
@@ -27,25 +44,18 @@ const Home = () => {
 	console.log(data, loading, error);
 
 	return (
-		<div
-			style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
-		>
-			<h1>{sayHello('Hello world')} !!!</h1>
-			<button
+		<Box sx={styles.root}>
+			<Typography variant='h1'>{sayHello('Hello world')} !!!</Typography>
+			<Button
+				variant='text'
 				onClick={() =>
 					addProject({ variables: { title: 'John Wick', duration: 101 } })
 				}
-				style={{
-					padding: '0.5rem 1rem',
-					borderRadius: '0.625rem',
-					border: 'none',
-					backgroundColor: 'rgb(221, 239, 255)',
-					cursor: 'pointer',
-				}}
+				sx={styles.btn}
 			>
 				Add movie
-			</button>
-		</div>
+			</Button>
+		</Box>
 	);
 };
 
