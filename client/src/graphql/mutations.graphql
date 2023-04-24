@@ -1,0 +1,12 @@
+mutation AddMovie($title: String, $duration: Int) {
+	addMovie(title: $title, duration: $duration) {
+		code
+		message
+		movie {
+			title
+			id
+			duration
+		}
+		success
+	}
+}
