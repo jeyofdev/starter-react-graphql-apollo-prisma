@@ -1,0 +1,17 @@
+name: main-workflow
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+      - name: run api tests
+        run: cd api && npm i && npm run test
+      - name: run client tests
+        run: cd client && npm i && npm run test
