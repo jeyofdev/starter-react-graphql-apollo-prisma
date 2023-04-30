@@ -5,7 +5,7 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"preinstall": "cd api && npm install && ../client && npm install",
+		"pre:install": "cd api && npm install && ../client && npm install",
 		"dev:client": "cd client && npm run dev",
 		"dev:api": "cd api && npm run dev",
 		"lint:client": "cd client && npm run lint",

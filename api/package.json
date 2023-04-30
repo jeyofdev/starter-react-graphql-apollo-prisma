@@ -11,7 +11,9 @@
 		"generate": "graphql-codegen --config codegen.ts",
 		"lint": "eslint src --fix --no-ignore --max-warnings=0",
 		"db:migrate": "npx prisma migrate dev",
-		"db:seed": "npx prisma db seed"
+		"db:seed": "npx prisma db seed",
+		"test": "vitest",
+		"coverage": "vitest run --coverage"
 	},
 	"keywords": [],
 	"author": "",
@@ -27,7 +29,9 @@
 		"@graphql-codegen/typescript": "^3.0.3",
 		"@graphql-codegen/typescript-resolvers": "^3.2.0",
 		"dotenv": "^16.0.3",
-		"prisma": "^4.13.0"
+		"prisma": "^4.13.0",
+		"typescript": "^5.0.4",
+		"vitest": "^0.30.1"
 	},
 	"prisma": {
 		"seed": "ts-node prisma/seed.ts"
