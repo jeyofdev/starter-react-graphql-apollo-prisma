@@ -34,7 +34,7 @@
 Install all dependencies :
 
 ```sh
-npm run pre:install
+npm run preinstall
 ```
 
 Install only dependencies of api :
