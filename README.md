@@ -43,7 +43,7 @@ Install only dependencies of api :
 cd api && npm install
 ```
 
-Install all dependencies :
+Install only dependencies of client :
 
 ```sh
 cd client && npm install
